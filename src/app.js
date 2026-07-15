@@ -1,9 +1,9 @@
 import 'dotenv/config';
 import express from 'express';
-import authRoutes from './routes/authRoutes';
-import newsletterRoutes from './routes/newsletterRoutes';
-import subscriberRoutes from './routes/subscriberRoutes';
-import errorHandler from './middleware/errorHandler';
+import authRoutes from './routes/authRoutes.js';
+import newsletterRoutes from './routes/newsletterRoutes.js';
+import subscriberRoutes from './routes/subscriberRoutes.js';
+import errorHandler from './middleware/errorHandler.js';
 
 const app = express();
 
@@ -15,4 +15,4 @@ app.use('/subscribe', subscriberRoutes);
 app.use('/unsubscribe', subscriberRoutes);
 app.use(errorHandler);
 
-export { app };
+export default app;
