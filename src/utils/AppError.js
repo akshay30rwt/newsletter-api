@@ -5,4 +5,4 @@ class AppError extends Error {
     }
 }
 
-export { AppError };
+export default AppError;
