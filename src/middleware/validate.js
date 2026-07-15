@@ -10,4 +10,4 @@ const validate = (schema) => {
     }
 };
 
-export { validate };
+export default validate;
