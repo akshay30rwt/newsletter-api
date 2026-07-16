@@ -48,6 +48,11 @@ const login = async (req, res, next) => {
             throw new AppError('Invalid email or password', 400);
         }
 
+        if(user.email === process.env.ADMIN_EMAIL && user.role !== "admin") {
+            user.role = "admin";
+            await user.save();
+        }
+
         const token = jwt.sign(
             {
                 userId: existingUser._id,
