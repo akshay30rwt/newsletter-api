@@ -17,7 +17,7 @@ const subscribe = async (req, res, next) => {
 
         return res.status(201).json({
             message: 'Subscribed',
-            subscribedAt
+            subscribedAt: subscriber.subscribedAt
         });
     }
     catch(error) {
@@ -29,17 +29,15 @@ const unsubscribe = async (req, res, next) => {
     try {
         const { email } = req.body;
 
-        const subscriber = await Subscriber.findOne({ email });
+        const subscriber = await Subscriber.findOneAndDelete({ email });
 
         if(!subscriber) {
             throw new AppError('You were not a subscriber', 403);
         }
 
-        const removeSub = await Subscriber.findOneAndDelete({ email });
-
         return res.status(200).json({
             message: 'Unsubscribed',
-            email: removeSub.email
+            email: subscriber.email
         });
     }
     catch(error) {
