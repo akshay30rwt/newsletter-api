@@ -100,3 +100,5 @@ const getSubscribers = async (req, res, next) => {
         next(error);
     }
 };
+
+export { createNewsletter, sendNewsletter, getNewsletters, getSubscribers };
