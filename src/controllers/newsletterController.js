@@ -91,7 +91,7 @@ const getSubscribers = async (req, res, next) => {
         return res.status(200).json({
             totalSubscribers,
             page,
-            totalPages: Math.ceil(totalNewsletters/limit),
+            totalPages: Math.ceil(totalSubscribers/limit),
             subscribers
         });
     }
