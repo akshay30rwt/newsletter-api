@@ -6,9 +6,9 @@ import { createNewsletter, sendNewsletter, getNewsletters, getSubscribers } from
 
 const router = express.Router();
 
-router.post('/', protect, adminOnly, validate(newsletterSchema), createNewsletter);
+router.post('/newsletters', protect, adminOnly, validate(newsletterSchema), createNewsletter);
 router.post('/:id/send', protect, adminOnly, sendNewsletter);
 router.get('/', protect, adminOnly, getSubscribers);
-router.get('/', protect, getNewsletters);
+router.get('/newsletters', protect, getNewsletters);
 
 export default router;
