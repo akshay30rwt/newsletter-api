@@ -10,7 +10,7 @@ const app = express();
 app.use(express.json());
 app.use('/auth', authRoutes);
 app.use('/newsletters', newsletterRoutes);
-app.use('/subscribers', subscriberRoutes);
+app.use('/subscribers', newsletterRoutes);
 app.use('/subscribe', subscriberRoutes);
 app.use('/unsubscribe', subscriberRoutes);
 app.use(errorHandler);
