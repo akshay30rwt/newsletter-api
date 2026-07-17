@@ -62,7 +62,7 @@ const getNewsletters = async (req, res, next) => {
         const limit = Number(req.query.limit) || 3;
         const skip = (page - 1) * limit;
 
-        const newsletters = await Newsletter.find().select('-sentAt', '-createdBy').skip(skip).limit(limit);
+        const newsletters = await Newsletter.find().select('-sentAt -createdBy').skip(skip).limit(limit);
 
         const totalNewsletters = await Newsletter.countDocuments();
 
