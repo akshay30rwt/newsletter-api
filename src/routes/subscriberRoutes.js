@@ -5,7 +5,7 @@ import validate from '../middleware/validate.js';
 
 const router = express.Router();
 
-router.post('/', validate(subscriberSchema), subscribe);
-router.post('/', validate(subscriberSchema), unsubscribe);
+router.post('/subscribe', validate(subscriberSchema), subscribe);
+router.post('/unsubscribe', validate(subscriberSchema), unsubscribe);
 
 export default router;
