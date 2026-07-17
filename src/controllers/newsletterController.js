@@ -1,4 +1,3 @@
-import { findOne } from '../../../user-profile-api/src/models/User.js';
 import Newsletter from '../models/Newsletter.js';
 import Subscriber from '../models/Subscriber.js';
 import AppError from '../utils/AppError.js';
